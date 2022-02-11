@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To-do Tracker</title>
+  </head>
+
+  <body class="bg-dark">
+    <header>
+      <h1>To-do Tracker</h1>
+    </header>
+
+    <section class="container">
+      <form id="my-form">
+        <h1 class="center-title">Add a task</h1>
+        <div class="msg"></div>
+        <div>
+          <label for="tasktitle">Description:</label>
+          <input type="text" id="tasktitle" />
+        </div>
+        <div>
+          <label for="deadline">Deadline:</label>
+          <input type="date" id="deadline" />
+        </div>
+        <div>
+          <label for="notes">Notes:</label>
+          <textarea rows="5" cols="60" id="notes"></textarea>
+        </div>
+        <input class="button" type="submit" value="Submit" />
+      </form>
+
+      <ul id="tasklist"></ul>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>

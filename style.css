@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: #e07a5f;
+  padding: 1rem;
+  text-align: center;
+  color: #f4f1de;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  padding: 5px;
+  background: #f4f4f4;
+  margin: 5px 0;
+}
+
+.container {
+  margin: auto;
+  width: 500px;
+  overflow: auto;
+  padding: 3rem 2rem;
+}
+
+.center-title {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+#my-form {
+  padding: 2rem;
+  background: #f2cc8f;
+  color: #14213d;
+  border-radius: 25px;
+}
+
+#my-form label {
+  display: block;
+}
+
+#my-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+
+#my-form input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+
+#my-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  border: 0;
+  background: #81b29a;
+  color: #3d405b;
+  border-radius: 5px;
+  margin: 5px 0;
+  font-size: medium;
+}
+
+.bg-dark {
+  background: #3d405b;
+  color: #f4f1de;
+}
