@@ -14,11 +14,11 @@
 
     <section class="container">
       <form id="my-form">
-        <h1 class="center-title">Add a task</h1>
+        <h1>Add a task</h1>
         <div class="msg"></div>
         <div>
           <label for="tasktitle">Description:</label>
-          <input type="text" id="tasktitle" />
+          <input type="text" id="tasktitle" placeholder="Enter text here" />
         </div>
         <div>
           <label for="deadline">Deadline:</label>
@@ -26,7 +26,13 @@
         </div>
         <div>
           <label for="notes">Notes:</label>
-          <textarea rows="5" cols="60" id="notes"></textarea>
+          <textarea
+            id="notes"
+            rows="4"
+            cols="60"
+            maxlength="200"
+            placeholder="(max. 200 characters)"
+          ></textarea>
         </div>
         <input class="button" type="submit" value="Submit" />
       </form>

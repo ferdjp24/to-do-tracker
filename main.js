@@ -1,11 +1,14 @@
 class Task {
   constructor(description, deadline, notes) {
     this.title = description;
-    this.deadline = deadline;
+    this.deadline = new Date(deadline);
     this.notes = notes;
+    this.isCompleted = false;
   }
 }
 
+const arrayOfTasks = [];
+// DOM Selections
 const myForm = document.querySelector("#my-form");
 const titleInput = document.querySelector("#tasktitle");
 const dateInput = document.querySelector("#deadline");
@@ -21,7 +24,10 @@ function onSubmit(e) {
   if (titleInput.value === "") {
     msg.classList.add("error");
     msg.innerHTML = "Please enter a description for the task";
-    setTimeout(() => msg.remove(), 3000);
+    setTimeout(() => {
+      msg.innerHTML = "";
+      msg.classList.remove("error");
+    }, 3000);
   } else {
     const newTask = new Task(
       titleInput.value,
@@ -29,10 +35,31 @@ function onSubmit(e) {
       notesInput.value
     );
 
+    console.log(newTask);
+
+    const descriptionSpan = document.createElement("span");
+    descriptionSpan.setAttribute("class", "uncompleted-task");
+    descriptionSpan.appendChild(document.createTextNode(newTask.title));
+
     const li = document.createElement("li");
-    li.appendChild(document.createTextNode(newTask));
-    console.log(li);
+    li.appendChild(descriptionSpan);
+    if (newTask.deadline != "") {
+      li.appendChild(document.createElement("br"));
+      li.appendChild(
+        document.createTextNode(
+          `Deadline: ${newTask.deadline.toUTCString().substring(0, 16)}`
+        )
+      );
+    }
+    if (newTask.notes != "") {
+      li.appendChild(document.createElement("br"));
+      li.appendChild(document.createTextNode(`Notes: ${newTask.notes}`));
+    }
+
+    taskList.appendChild(li);
+
+    titleInput.value = "";
+    dateInput.value = "";
+    notesInput.value = "";
   }
 }
-
-console.log(notesInput.value);
