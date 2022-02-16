@@ -1,13 +1,14 @@
 class Task {
   constructor(description, deadline, notes) {
     this.title = description;
-    this.deadline = new Date(deadline);
+    this.deadline = deadline;
     this.notes = notes;
     this.isCompleted = false;
   }
 }
 
-const arrayOfTasks = [];
+// const arrayOfTasks = []; // can be useful for sorting feature
+
 // DOM Selections
 const myForm = document.querySelector("#my-form");
 const titleInput = document.querySelector("#tasktitle");
@@ -35,10 +36,10 @@ function onSubmit(e) {
       notesInput.value
     );
 
-    console.log(newTask);
+    // arrayOfTasks.push(newTask); // can be useful for sorting feature
 
     const descriptionSpan = document.createElement("span");
-    descriptionSpan.setAttribute("class", "uncompleted-task");
+    descriptionSpan.setAttribute("class", "task-title");
     descriptionSpan.appendChild(document.createTextNode(newTask.title));
 
     const li = document.createElement("li");
@@ -47,7 +48,9 @@ function onSubmit(e) {
       li.appendChild(document.createElement("br"));
       li.appendChild(
         document.createTextNode(
-          `Deadline: ${newTask.deadline.toUTCString().substring(0, 16)}`
+          `Deadline: ${new Date(newTask.deadline)
+            .toUTCString()
+            .substring(0, 16)}`
         )
       );
     }
@@ -55,6 +58,24 @@ function onSubmit(e) {
       li.appendChild(document.createElement("br"));
       li.appendChild(document.createTextNode(`Notes: ${newTask.notes}`));
     }
+
+    li.appendChild(document.createElement("br"));
+    const completeBtn = document.createElement("button");
+    completeBtn.setAttribute("id", "feature-button");
+    completeBtn.innerHTML = "Complete";
+    completeBtn.addEventListener("click", (e) => {
+      li.setAttribute("class", "completed-task");
+      completeBtn.remove();
+    });
+    li.appendChild(completeBtn);
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.setAttribute("id", "feature-button");
+    deleteBtn.innerHTML = "Delete";
+    deleteBtn.addEventListener("click", (e) => {
+      li.remove();
+    });
+    li.appendChild(deleteBtn);
 
     taskList.appendChild(li);
 
