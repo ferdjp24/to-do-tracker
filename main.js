@@ -31,6 +31,7 @@ const sortDateVal = localStorage.getItem("sortDate");
 const sortCompVal = localStorage.getItem("sortComp");
 
 // Events
+
 sortDateBtn.addEventListener("click", (e) => {
   if (sortDateVal === "true") {
     localStorage.setItem("sortDate", "false");
