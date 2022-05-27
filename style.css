@@ -38,7 +38,7 @@ ul {
 
 ul li {
   padding: 15px 25px;
-  background: #f4f1de;
+  background: beige;
   margin: 5px 0;
   border-radius: 15px;
   color: #3d405b;
@@ -53,7 +53,7 @@ ul li {
 
 #my-form {
   padding: 2rem;
-  background: #f2cc8f;
+  background: burlywood;
   color: #14213d;
   border-radius: 25px;
 }
@@ -62,24 +62,24 @@ ul li {
   display: block;
 }
 
-#my-form input[type="text"] {
+#my-form input[type='text'] {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: small;
 }
 
-#my-form input[type="date"] {
+#my-form input[type='date'] {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: small;
 }
 
@@ -89,7 +89,7 @@ ul li {
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: small;
 }
 
